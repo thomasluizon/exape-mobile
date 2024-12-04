@@ -1,50 +1,119 @@
-# Welcome to your Expo app 👋
+# Aplicativo de Rolagem Infinita de Pokémon
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Este é um projeto **React Native** criado com **Expo** que utiliza a **Pokémon API (PokeAPI)** para exibir uma lista de Pokémon. O aplicativo implementa rolagem infinita, permitindo que os Pokémon sejam carregados progressivamente conforme o usuário desliza para baixo. Inclui também um indicador de carregamento para melhorar a experiência do usuário.
 
-## Get started
+## Funcionalidades
 
-1. Install dependencies
+-  **Rolagem infinita**: Carregamento de Pokémon em lotes de 2 conforme o scroll.
+-  **Indicador de carregamento dinâmico**: Exibe um spinner enquanto novos Pokémon são buscados.
+-  **Altura ajustável dos itens**: Garantindo uma experiência de rolagem otimizada.
+-  **Consumo da PokeAPI**: Busca informações como nome, tipo e imagem dos Pokémon.
+
+---
+
+## Tecnologias Utilizadas
+
+-  **React Native** (via Expo)
+-  **Expo Router**
+-  **PokeAPI** (API REST)
+-  **JavaScript/TypeScript**
+-  **FlatList** para renderizar a lista de Pokémon
+
+---
+
+## Instalação e Configuração
+
+### Pré-requisitos
+
+Certifique-se de ter os seguintes itens instalados no seu sistema:
+
+-  [Node.js](https://nodejs.org/) (recomendado LTS)
+-  [Expo CLI](https://docs.expo.dev/get-started/installation/)
+-  Um dispositivo físico ou emulador para testes (app **Expo Go** para Android/iOS ou um simulador)
+
+### Passos para Rodar o Projeto
+
+1. **Clone o Repositório:**
+
+   ```bash
+   git clone <url-do-repositorio>
+   cd <pasta-do-projeto>
+
+   ```
+
+2. **Instale as Dependências:**
 
    ```bash
    npm install
+   # ou
+   yarn install
    ```
 
-2. Start the app
+3. **Inicie o Servidor de Desenvolvimento:**
+
+   Para iniciar o servidor, utilize o comando abaixo:
 
    ```bash
-    npx expo start
+   npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+4. **Execute o Aplicativo em um Dispositivo Físico:**
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   -  Baixe o aplicativo **Expo Go** na App Store (iOS) ou Play Store (Android).
+   -  Abra o Expo Go no seu dispositivo.
+   -  Escaneie o QR code exibido no terminal ou navegador.
+   -  O aplicativo será carregado no seu dispositivo diretamente do servidor de desenvolvimento.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+5. **Execute o Aplicativo em um Emulador ou Simulador:**
 
-## Get a fresh project
+   -  Certifique-se de ter um emulador ou simulador configurado:
+      -  **iOS:** Xcode instalado e configurado no macOS.
+      -  **Android:** Android Studio instalado e com o emulador configurado.
+   -  Na interface do Expo, clique na opção **Run on Android device/emulator** ou **Run on iOS simulator**.
+   -  O aplicativo será carregado automaticamente no simulador ou emulador configurado.
 
-When you're ready, run:
+6. **Como Gerar um APK:**
 
-```bash
-npm run reset-project
-```
+   1. **Configure uma Conta Expo:**
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+      -  Certifique-se de que você possui uma conta Expo. Caso não tenha, crie uma em [expo.dev](https://expo.dev/).
 
-## Learn more
+   2. **Instale o EAS CLI:**
 
-To learn more about developing your project with Expo, look at the following resources:
+      -  O **EAS CLI** é usado para criar builds no Expo. Instale-o globalmente:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+      ```bash
+      npm install -g eas-cli
+      ```
 
-## Join the community
+   3. **Inicialize o EAS no Projeto:**
 
-Join our community of developers creating universal apps.
+      -  Configure o EAS no projeto usando:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+      ```bash
+      eas build:configure
+      ```
+
+      -  Siga as instruções para configurar o projeto com o EAS.
+
+   4. **Crie o APK:**
+
+      -  Utilize o comando abaixo para gerar o APK:
+
+      ```bash
+      eas build --platform android
+      ```
+
+      -  Escolha `apk` como formato de saída quando solicitado.
+      -  O Expo compilará o aplicativo e gerará o APK.
+
+   5. **Baixe o APK:**
+      -  Após a compilação, o link para download será exibido no terminal.
+      -  Clique no link ou copie e cole no navegador para baixar o APK.
+
+7. **Teste o Aplicativo:**
+
+   -  Depois de instalar o APK no dispositivo, teste todas as funcionalidades do aplicativo, incluindo:
+      -  Rolagem infinita.
+      -  Carregamento dinâmico com o spinner.
+      -  Comportamento do scroll.
